@@ -7,15 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #050811;
             --accent-gold: #ffd700;
             --arg-blue: #74acdf;
             --eng-red: #ff2a2a;
-            
-            /* High-vibrancy gradients for a premium feel */
-            --arg-gradient: linear-gradient(135deg, rgba(116, 172, 223, 0.25), rgba(255, 255, 255, 0.1));
-            --eng-gradient: linear-gradient(135deg, rgba(255, 42, 42, 0.2), rgba(255, 255, 255, 0.1));
-            --ticket-neon: linear-gradient(90deg, #74acdf, #ff2a2a);
         }
 
         * {
@@ -25,136 +19,144 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* --- VIBRANT ANIMATED BACKGROUND --- */
         body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(116, 172, 223, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(255, 42, 42, 0.2) 0%, transparent 40%);
+            /* Colorful, flowing gradient background */
+            background: linear-gradient(-45deg, #ff007f, #4158d0, #00d2ff, #8a2be2);
+            background-size: 400% 400%;
+            animation: vibrantBG 15s ease infinite;
             color: white;
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
         }
 
+        @keyframes vibrantBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         /* --- STAGE BANNER --- */
         .stage-banner {
             text-align: center;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 900;
             letter-spacing: 6px;
             color: #fff;
-            background: linear-gradient(90deg, transparent, var(--eng-red), var(--arg-blue), transparent);
-            padding: 6px 0;
-            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         /* --- HEADER SECTION --- */
         .header {
             text-align: center;
-            margin-bottom: 35px;
-            padding: 35px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                        inset 0 0 20px rgba(116, 172, 223, 0.2);
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         .header h1 {
-            font-size: 36px;
+            font-size: 42px; /* Increased Size */
             font-weight: 900;
             letter-spacing: 4px;
             color: var(--accent-gold);
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
         }
 
         .header h2 {
-            font-size: 28px;
-            margin: 10px 0 25px;
-            background: linear-gradient(90deg, #74acdf 40%, #ffffff 50%, #ff2a2a 60%);
+            font-size: 32px; /* Increased Size */
+            margin: 15px 0 30px;
+            background: linear-gradient(90deg, #9ccbfa 20%, #ffffff 50%, #ff7373 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));
         }
 
         .match-details {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            font-size: 15px;
+            gap: 20px;
+            font-size: 18px;
             font-weight: 700;
         }
 
         .match-details span {
-            background: rgba(255, 255, 255, 0.07);
-            padding: 8px 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         .pricing {
-            margin-top: 25px;
+            margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            font-weight: 700;
-            font-size: 15px;
+            font-weight: 900;
+            font-size: 18px; /* Increased Size */
         }
 
         .pricing div {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 8px 16px;
-            border-radius: 30px;
-            border: 1px solid var(--accent-gold);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 12px 24px;
+            border-radius: 40px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
         /* --- UNLOCK CODE INPUT --- */
         .unlock-container {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
             position: sticky;
-            top: 15px;
+            top: 20px;
             z-index: 100;
         }
 
         .code-input {
-            padding: 18px 30px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 40px;
-            border: 2px solid #fff;
-            background: linear-gradient(135deg, rgba(11, 15, 25, 0.9), rgba(30, 40, 60, 0.9));
+            padding: 22px 35px;
+            font-size: 22px; /* Increased Size */
+            font-weight: 900;
+            border-radius: 50px;
+            border: 3px solid #fff;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             outline: none;
             text-align: center;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             width: 100%;
-            max-width: 340px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255,255,255,0.2);
+            max-width: 400px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255,255,255,0.4);
             transition: all 0.4s ease;
         }
 
         .code-input:focus {
             border-color: var(--accent-gold);
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
         }
 
-        /* --- TICKETS GRID (Increased Size) --- */
+        /* --- TICKETS GRID --- */
         .tickets-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 40px; /* Increased gap */
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -165,44 +167,40 @@
             }
         }
 
-        /* --- PREMIUM TICKET DESIGN --- */
+        /* --- PREMIUM TICKET DESIGN (Massively Scaled Up) --- */
         .ticket {
             position: relative;
-            background: rgba(255, 255, 255, 0.02);
-            border: 2px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
+            background: rgba(0, 0, 0, 0.4); /* Darker glass to stand out against bright bg */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 35px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
-            min-height: 240px; /* Increased height */
-            transition: transform 0.3s;
-        }
-
-        .ticket:hover {
-            transform: translateY(-5px);
+            min-height: 340px; /* Much larger height */
         }
 
         .ticket-header {
             text-align: center;
-            background: linear-gradient(90deg, rgba(116, 172, 223, 0.3), rgba(255, 42, 42, 0.3));
-            padding: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 16px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            font-size: 22px; /* Increased Size */
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+            color: var(--accent-gold);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
         }
 
         .ticket-body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 30px;
+            padding: 35px 20px;
             position: relative;
             flex-grow: 1;
-            background: linear-gradient(90deg, rgba(116,172,223,0.05) 0%, rgba(255,42,42,0.05) 100%);
         }
 
         /* --- SPLIT NATIONAL FLAGS AS BACKGROUNDS --- */
@@ -211,23 +209,21 @@
             top: 0;
             bottom: 0;
             width: 50%;
-            opacity: 0.12; /* Subtle flag integration */
+            opacity: 0.25; /* Slightly more visible flags */
             pointer-events: none;
             z-index: 1;
             background-size: cover;
             background-position: center;
-            filter: saturate(1.5) blur(1px);
+            filter: saturate(1.5);
         }
 
         .flag-left {
             left: 0;
-            /* Simple CSS representation of the Argentina Sun/Stripes flag layout */
             background-image: linear-gradient(to bottom, #74acdf 30%, #fff 30%, #fff 70%, #74acdf 70%);
         }
 
         .flag-right {
             right: 0;
-            /* Simple CSS representation of the England St. George's Cross */
             background: 
                 linear-gradient(to right, transparent 44%, #ff2a2a 44%, #ff2a2a 56%, transparent 56%),
                 linear-gradient(to bottom, #fff 40%, #ff2a2a 40%, #ff2a2a 60%, #fff 60%);
@@ -236,100 +232,99 @@
         .player-card {
             text-align: center;
             width: 45%;
-            z-index: 2; /* Sits completely above the background flags */
+            z-index: 2;
         }
 
         .country-label {
-            font-size: 14px;
+            font-size: 18px; /* Increased Size */
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 15px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.9);
         }
 
-        .arg-label { color: #9ccbfa; }
-        .eng-label { color: #ff5c5c; }
+        .arg-label { color: #b3d9ff; }
+        .eng-label { color: #ff8080; }
 
         .player-photo {
-            width: 105px; /* Increased photo size */
-            height: 105px;
+            width: 140px; /* HUGE PHOTO */
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            margin-bottom: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
             background-color: #151a28;
-            transition: all 0.5s ease;
         }
         
-        .ticket:nth-child(odd) .player-photo { border: 3px solid var(--arg-blue); }
-        .ticket:nth-child(even) .player-photo { border: 3px solid var(--eng-red); }
+        .ticket:nth-child(odd) .player-photo { border: 4px solid var(--arg-blue); }
+        .ticket:nth-child(even) .player-photo { border: 4px solid var(--eng-red); }
 
         .player-name {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            line-height: 1.3;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            font-size: 20px; /* Increased Size */
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,1);
         }
 
         .player-number {
-            font-size: 22px;
+            font-size: 32px; /* Increased Size */
             font-weight: 900;
             color: var(--accent-gold);
-            text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+            text-shadow: 0 4px 10px rgba(0,0,0,1);
         }
 
         .vs-badge {
-            font-size: 24px;
+            font-size: 36px; /* Increased Size */
             font-weight: 900;
             font-style: italic;
-            color: rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.9);
             z-index: 2;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            text-shadow: 0 0 20px rgba(0,0,0,0.8);
         }
 
         /* --- LOCK OVERLAY --- */
         .lock-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, #131a2e 20%, #070b14 100%);
+            background: rgba(0, 0, 0, 0.85); /* Solid dark overlay to hide ticket before unlock */
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 10;
-            /* CRITICAL CHANGE: Slow, smooth dilution transformation */
-            transition: opacity 3.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                        backdrop-filter 3.5s ease, 
-                        transform 3.5s ease;
+            transition: opacity 4s cubic-bezier(0.4, 0, 0.2, 1), 
+                        backdrop-filter 4s ease, 
+                        transform 4s ease;
             transform: scale(1);
         }
 
         .lock-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-            filter: drop-shadow(0 0 10px rgba(255,215,0,0.4));
+            font-size: 60px; /* Increased Size */
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255,215,0,0.6));
             animation: pulse 2s infinite alternate;
         }
 
         .lock-text {
-            font-weight: 700;
-            letter-spacing: 4px;
+            font-weight: 900;
+            letter-spacing: 5px;
             color: var(--accent-gold);
-            font-size: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            font-size: 20px; /* Increased Size */
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            100% { transform: scale(1.15); }
         }
 
-        /* Dilute / Dissolve effect applied slowly */
         .unlocked .lock-overlay {
             opacity: 0;
-            transform: scale(1.08);
+            transform: scale(1.05);
             pointer-events: none;
         }
     </style>
@@ -366,7 +361,6 @@
     </div>
 
     <script>
-        // Exact filename matching from repository images
         const matchData = [
             { arg: { name: "Lionel Messi", num: 10, img: "lionel_messi.jpg" }, eng: { name: "John Stones", num: 5, img: "john_stones.jpg" } },
             { arg: { name: "Julián Álvarez", num: 9, img: "julian_alvarez.jpg" }, eng: { name: "Marc Guéhi", num: 6, img: "marc_guehi.jpg" } },
@@ -395,7 +389,6 @@
 
         const grid = document.getElementById('ticketsGrid');
 
-        // Dynamically build larger, colorful tickets with nested background flags
         matchData.forEach((match, index) => {
             const ticketHTML = `
                 <div class="ticket" id="ticket-${index}">
@@ -407,24 +400,21 @@
                     </div>
 
                     <div class="ticket-body">
-                        <!-- Split Flag Backgrounds inside the body -->
                         <div class="ticket-bg-flag flag-left"></div>
                         <div class="ticket-bg-flag flag-right"></div>
 
-                        <!-- Argentina -->
                         <div class="player-card">
                             <div class="country-label arg-label">ARGENTINA</div>
-                            <img src="Argentina/${match.arg.img}" alt="${match.arg.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/105/74acdf/ffffff?text=${match.arg.num}'">
+                            <img src="Argentina/${match.arg.img}" alt="${match.arg.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/140/74acdf/ffffff?text=${match.arg.num}'">
                             <div class="player-name">${match.arg.name}</div>
                             <div class="player-number">#${match.arg.num}</div>
                         </div>
 
                         <div class="vs-badge">VS</div>
 
-                        <!-- England -->
                         <div class="player-card">
                             <div class="country-label eng-label">ENGLAND</div>
-                            <img src="England/${match.eng.img}" alt="${match.eng.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/105/ff2a2a/ffffff?text=${match.eng.num}'">
+                            <img src="England/${match.eng.img}" alt="${match.eng.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/140/ff2a2a/ffffff?text=${match.eng.num}'">
                             <div class="player-name">${match.eng.name}</div>
                             <div class="player-number">#${match.eng.num}</div>
                         </div>
@@ -434,19 +424,18 @@
             grid.innerHTML += ticketHTML;
         });
 
-        // Slow sequential dilution interaction logic
         const inputField = document.getElementById('masterCode');
         
         inputField.addEventListener('input', function() {
             if (this.value.toUpperCase().trim() === 'HAND OF GOD') {
                 this.style.borderColor = '#4CAF50';
                 this.style.color = '#4CAF50';
-                this.style.boxShadow = '0 0 20px rgba(76, 175, 80, 0.6)';
+                this.style.background = 'rgba(0, 0, 0, 0.9)';
+                this.style.boxShadow = '0 0 30px rgba(76, 175, 80, 0.8)';
                 this.disabled = true;
 
                 const tickets = document.querySelectorAll('.ticket');
                 tickets.forEach((ticket, index) => {
-                    // Increased delay interval to 750ms so you can watch them dilute slowly down the screen
                     setTimeout(() => {
                         ticket.classList.add('unlocked');
                     }, index * 750); 
