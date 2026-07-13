@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent-gold: #ffd700;
-            --arg-blue: #74acdf;
-            --eng-red: #ff2a2a;
+            --accent-gold: #fff000;
+            --arg-blue: #00e5ff;
+            --eng-red: #ff0055;
         }
 
         * {
@@ -19,12 +19,11 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* --- VIBRANT ANIMATED BACKGROUND --- */
+        /* --- EXTREMELY VIBRANT ANIMATED BACKGROUND --- */
         body {
-            /* Colorful, flowing gradient background */
-            background: linear-gradient(-45deg, #ff007f, #4158d0, #00d2ff, #8a2be2);
+            background: linear-gradient(-45deg, #ff007f, #4158d0, #00d2ff, #ff8c00);
             background-size: 400% 400%;
-            animation: vibrantBG 15s ease infinite;
+            animation: vibrantBG 12s ease infinite;
             color: white;
             min-height: 100vh;
             padding: 20px;
@@ -40,48 +39,48 @@
         /* --- STAGE BANNER --- */
         .stage-banner {
             text-align: center;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 900;
-            letter-spacing: 6px;
+            letter-spacing: 8px;
             color: #fff;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 0;
-            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 12px 0;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.5);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        /* --- HEADER SECTION --- */
+        /* --- HEADER SECTION (Bright Glass) --- */
         .header {
             text-align: center;
             margin-bottom: 40px;
             padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(255,255,255,0.3);
         }
 
         .header h1 {
-            font-size: 42px; /* Increased Size */
+            font-size: 46px; 
             font-weight: 900;
-            letter-spacing: 4px;
-            color: var(--accent-gold);
+            letter-spacing: 5px;
+            color: #fff;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
 
         .header h2 {
-            font-size: 32px; /* Increased Size */
+            font-size: 34px; 
             margin: 15px 0 30px;
-            background: linear-gradient(90deg, #9ccbfa 20%, #ffffff 50%, #ff7373 80%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));
+            color: #fff;
+            font-weight: 900;
+            text-shadow: 2px 2px 0px #ff0055, -2px -2px 0px #00e5ff;
         }
 
         .match-details {
@@ -90,33 +89,34 @@
             justify-content: center;
             gap: 20px;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .match-details span {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 10px 20px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.25);
+            padding: 12px 25px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .pricing {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
             font-weight: 900;
-            font-size: 18px; /* Increased Size */
+            font-size: 20px;
         }
 
         .pricing div {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 12px 24px;
+            background: linear-gradient(135deg, #ff007f, #ff8c00);
+            padding: 12px 25px;
             border-radius: 40px;
-            border: 2px solid var(--accent-gold);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            border: 3px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: white;
         }
 
         /* --- UNLOCK CODE INPUT --- */
@@ -130,33 +130,37 @@
 
         .code-input {
             padding: 22px 35px;
-            font-size: 22px; /* Increased Size */
+            font-size: 24px; 
             font-weight: 900;
             border-radius: 50px;
-            border: 3px solid #fff;
-            background: rgba(0, 0, 0, 0.8);
+            border: 4px solid #fff;
+            background: rgba(255, 255, 255, 0.25);
             color: white;
             outline: none;
             text-align: center;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
             width: 100%;
-            max-width: 400px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255,255,255,0.4);
+            max-width: 450px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255,255,255,0.5);
             transition: all 0.4s ease;
         }
 
+        .code-input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         .code-input:focus {
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 15px 45px rgba(255, 255, 255, 0.8);
         }
 
         /* --- TICKETS GRID --- */
         .tickets-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px; /* Increased gap */
+            gap: 45px; 
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -167,31 +171,31 @@
             }
         }
 
-        /* --- PREMIUM TICKET DESIGN (Massively Scaled Up) --- */
+        /* --- COLORFUL TICKET DESIGN (No Black) --- */
         .ticket {
             position: relative;
-            background: rgba(0, 0, 0, 0.4); /* Darker glass to stand out against bright bg */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 3px solid rgba(255, 255, 255, 0.4);
-            border-radius: 35px;
+            background: rgba(255, 255, 255, 0.15); /* Bright frosted glass */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 4px solid rgba(255, 255, 255, 0.6);
+            border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255,255,255,0.4);
             display: flex;
             flex-direction: column;
-            min-height: 340px; /* Much larger height */
+            min-height: 360px; 
         }
 
         .ticket-header {
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
+            background: linear-gradient(90deg, #ff007f, #ff8c00); /* Neon Header */
+            padding: 22px;
             font-weight: 900;
-            letter-spacing: 3px;
-            font-size: 22px; /* Increased Size */
-            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
-            color: var(--accent-gold);
-            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+            letter-spacing: 4px;
+            font-size: 24px; 
+            border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .ticket-body {
@@ -209,17 +213,16 @@
             top: 0;
             bottom: 0;
             width: 50%;
-            opacity: 0.25; /* Slightly more visible flags */
+            opacity: 0.35; /* Much brighter flags */
             pointer-events: none;
             z-index: 1;
             background-size: cover;
             background-position: center;
-            filter: saturate(1.5);
         }
 
         .flag-left {
             left: 0;
-            background-image: linear-gradient(to bottom, #74acdf 30%, #fff 30%, #fff 70%, #74acdf 70%);
+            background-image: linear-gradient(to bottom, #43A1D5 30%, #fff 30%, #fff 70%, #43A1D5 70%);
         }
 
         .flag-right {
@@ -236,59 +239,60 @@
         }
 
         .country-label {
-            font-size: 18px; /* Increased Size */
+            font-size: 20px; 
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 15px;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.9);
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
         }
 
-        .arg-label { color: #b3d9ff; }
-        .eng-label { color: #ff8080; }
+        .arg-label { color: #fff; text-shadow: 0 0 10px #00a2ff, 0 3px 6px rgba(0,0,0,0.4); }
+        .eng-label { color: #fff; text-shadow: 0 0 10px #ff0055, 0 3px 6px rgba(0,0,0,0.4); }
 
         .player-photo {
-            width: 140px; /* HUGE PHOTO */
-            height: 140px;
+            width: 150px; 
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-            background-color: #151a28;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            background-color: transparent;
         }
         
-        .ticket:nth-child(odd) .player-photo { border: 4px solid var(--arg-blue); }
-        .ticket:nth-child(even) .player-photo { border: 4px solid var(--eng-red); }
+        .ticket:nth-child(odd) .player-photo { border: 6px solid #00e5ff; }
+        .ticket:nth-child(even) .player-photo { border: 6px solid #fff000; }
 
         .player-name {
-            font-size: 20px; /* Increased Size */
-            font-weight: 800;
+            font-size: 22px; 
+            font-weight: 900;
             margin-bottom: 8px;
             line-height: 1.2;
-            text-shadow: 0 3px 6px rgba(0,0,0,1);
+            text-shadow: 0 3px 8px rgba(0,0,0,0.5);
         }
 
         .player-number {
-            font-size: 32px; /* Increased Size */
+            font-size: 36px; 
             font-weight: 900;
-            color: var(--accent-gold);
-            text-shadow: 0 4px 10px rgba(0,0,0,1);
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .vs-badge {
-            font-size: 36px; /* Increased Size */
+            font-size: 40px; 
             font-weight: 900;
             font-style: italic;
-            color: rgba(255,255,255,0.9);
+            color: #fff;
             z-index: 2;
-            text-shadow: 0 0 20px rgba(0,0,0,0.8);
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
         }
 
-        /* --- LOCK OVERLAY --- */
+        /* --- COLORFUL LOCK OVERLAY --- */
         .lock-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85); /* Solid dark overlay to hide ticket before unlock */
+            /* Changed from black to a bright, vibrant pink/purple gradient */
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.95), rgba(65, 88, 208, 0.95));
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             display: flex;
@@ -300,26 +304,27 @@
                         backdrop-filter 4s ease, 
                         transform 4s ease;
             transform: scale(1);
+            border-radius: 35px;
         }
 
         .lock-icon {
-            font-size: 60px; /* Increased Size */
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 15px rgba(255,215,0,0.6));
-            animation: pulse 2s infinite alternate;
+            font-size: 70px; 
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+            animation: pulse 1.5s infinite alternate;
         }
 
         .lock-text {
             font-weight: 900;
-            letter-spacing: 5px;
-            color: var(--accent-gold);
-            font-size: 20px; /* Increased Size */
-            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+            letter-spacing: 6px;
+            color: #fff;
+            font-size: 22px; 
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            100% { transform: scale(1.15); }
+            100% { transform: scale(1.2); }
         }
 
         .unlocked .lock-overlay {
@@ -405,7 +410,7 @@
 
                         <div class="player-card">
                             <div class="country-label arg-label">ARGENTINA</div>
-                            <img src="Argentina/${match.arg.img}" alt="${match.arg.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/140/74acdf/ffffff?text=${match.arg.num}'">
+                            <img src="Argentina/${match.arg.img}" alt="${match.arg.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/150/ffffff/000000?text=${match.arg.num}'">
                             <div class="player-name">${match.arg.name}</div>
                             <div class="player-number">#${match.arg.num}</div>
                         </div>
@@ -414,7 +419,7 @@
 
                         <div class="player-card">
                             <div class="country-label eng-label">ENGLAND</div>
-                            <img src="England/${match.eng.img}" alt="${match.eng.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/140/ff2a2a/ffffff?text=${match.eng.num}'">
+                            <img src="England/${match.eng.img}" alt="${match.eng.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/150/ffffff/000000?text=${match.eng.num}'">
                             <div class="player-name">${match.eng.name}</div>
                             <div class="player-number">#${match.eng.num}</div>
                         </div>
@@ -428,10 +433,10 @@
         
         inputField.addEventListener('input', function() {
             if (this.value.toUpperCase().trim() === 'HAND OF GOD') {
-                this.style.borderColor = '#4CAF50';
-                this.style.color = '#4CAF50';
-                this.style.background = 'rgba(0, 0, 0, 0.9)';
-                this.style.boxShadow = '0 0 30px rgba(76, 175, 80, 0.8)';
+                this.style.borderColor = '#fff';
+                this.style.color = '#fff';
+                this.style.background = 'linear-gradient(90deg, #00d2ff, #43A1D5)';
+                this.style.boxShadow = '0 0 30px rgba(0, 210, 255, 0.8)';
                 this.disabled = true;
 
                 const tickets = document.querySelectorAll('.ticket');
