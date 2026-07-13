@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Rivals: Argentina Vs England</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-gold: #d4af37;
+            --arg-blue: #43A1D5;
+            --eng-red: #CE1126;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at top right, #1a233a 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, #1a233a 0%, transparent 40%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- HEADER SECTION --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 15px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            margin: 10px 0 20px;
+            background: linear-gradient(90deg, var(--arg-blue), white, var(--eng-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .match-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .match-details span {
+            background: rgba(0,0,0,0.3);
+            padding: 5px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .pricing {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* --- UNLOCK SECTION --- */
+        .unlock-container {
+            text-align: center;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .code-input {
+            padding: 15px 25px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: 1px solid var(--accent-gold);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            outline: none;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 100%;
+            max-width: 300px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s;
+        }
+
+        .code-input:focus {
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- TICKETS GRID --- */
+        .tickets-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media(min-width: 768px) {
+            .tickets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* --- TICKET DESIGN --- */
+        .ticket {
+            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ticket-header {
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            padding: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--accent-gold);
+        }
+
+        .ticket-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .player-card {
+            text-align: center;
+            width: 40%;
+        }
+
+        .country-label {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .arg-label { color: var(--arg-blue); }
+        .eng-label { color: var(--eng-red); }
+
+        .player-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.2);
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            background-color: #222;
+        }
+
+        .player-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .player-number {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        .vs-badge {
+            font-size: 20px;
+            font-weight: 800;
+            font-style: italic;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* --- LOCK OVERLAY --- */
+        .lock-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: opacity 1.5s ease-in-out, backdrop-filter 1.5s ease;
+        }
+
+        .lock-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .lock-text {
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+        }
+
+        /* Dilute Animation Class */
+        .unlocked .lock-overlay {
+            opacity: 0;
+            pointer-events: none;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>HISTORICAL RIVALS</h1>
+        <h2>ARGENTINA Vs ENGLAND</h2>
+        <div class="match-details">
+            <span>📅 16th July</span>
+            <span>⏰ 12:30</span>
+            <span>🏆 Semi Final</span>
+        </div>
+        <div class="pricing">
+            <div>🎟️ Ticket: $100</div>
+            <div>⚽ 1st Goal: $1200</div>
+            <div>⚽ 2nd Goal: $600</div>
+            <div>⚽ 3rd Goal: $200</div>
+        </div>
+    </div>
+
+    <!-- Code Input Section -->
+    <div class="unlock-container">
+        <input type="text" id="masterCode" class="code-input" placeholder="ENTER SECRET CODE" autocomplete="off">
+    </div>
+
+    <!-- Tickets Container -->
+    <div class="tickets-grid" id="ticketsGrid">
+        <!-- Tickets will be generated here by JavaScript -->
+    </div>
+
+    <script>
+        // Data mapping strictly to your uploaded file names in GitHub
+        const matchData = [
+            { arg: { name: "Lionel Messi", num: 10, img: "lionel_messi.jpg" }, eng: { name: "John Stones", num: 5, img: "john_stones.jpg" } },
+            { arg: { name: "Julián Álvarez", num: 9, img: "julian_alvarez.jpg" }, eng: { name: "Marc Guéhi", num: 6, img: "marc_guehi.jpg" } },
+            { arg: { name: "Lautaro Martínez", num: 22, img: "lautaro_martinez.jpg" }, eng: { name: "Ezri Konsa", num: 2, img: "ezri_konsa.jpg" } },
+            { arg: { name: "Thiago Almada", num: 16, img: "thiayo_almada.jpg" }, eng: { name: "Reece James", num: 24, img: "reece_james.jpg" } },
+            { arg: { name: "Giuliano Simeone", num: 17, img: "giuliano_simeone.jpg" }, eng: { name: "Dan Burn", num: 15, img: "dan_burn.jpg" } },
+            { arg: { name: "Nico Paz", num: 18, img: "nico_paz.jpg" }, eng: { name: "Trevoh Chalobah", num: 12, img: "trevah_chalobah.jpg" } },
+            { arg: { name: "José Manuel López", num: 21, img: "jose_manuel_lopez.jpg" }, eng: { name: "Jarell Quansah", num: 26, img: "jarell_quansah.jpg" } },
+            { arg: { name: "Nico González", num: 15, img: "nico_gonzalez.jpg" }, eng: { name: "Djed Spence", num: 25, img: "djed_spence.jpg" } },
+            { arg: { name: "Alexis Mac Allister", num: 20, img: "alexis_mac_allister.jpg" }, eng: { name: "Nico O'Reilly", num: 3, img: "nico_oreilly.jpg" } },
+            { arg: { name: "Giovani Lo Celso", num: 11, img: "giovani_lo_celso.jpg" }, eng: { name: "Declan Rice", num: 4, img: "declan_rice.jpg" } },
+            { arg: { name: "Rodrigo De Paul", num: 7, img: "rodrigo_de_paul.jpg" }, eng: { name: "Jordan Henderson", num: 14, img: "jordon_henderson.jpg" } },
+            { arg: { name: "Exequiel Palacios", num: 14, img: "exequiel_palacios.jpg" }, eng: { name: "Kobbie Mainoo", num: 16, img: "kobbie_mainoo.jpg" } },
+            { arg: { name: "Marcos Senesi", num: 2, img: "marcos_senesi.jpg" }, eng: { name: "Harry Kane", num: 9, img: "harry_kane.jpg" } },
+            { arg: { name: "Nicolás Tagliafico", num: 3, img: "nicolas_tagliafico.jpg" }, eng: { name: "Bukayo Saka", num: 7, img: "bukayo_saka.jpg" } },
+            { arg: { name: "Gonzalo Montiel", num: 4, img: "gonzalo_montiel.jpg" }, eng: { name: "Marcus Rashford", num: 11, img: "marcus_rashford.jpg" } },
+            { arg: { name: "Lisandro Martínez", num: 6, img: "lisandro_martinez.jpg" }, eng: { name: "Anthony Gordon", num: 18, img: "anthony_gordon.jpg" } },
+            { arg: { name: "Cristian Romero", num: 13, img: "cristian_romero.jpg" }, eng: { name: "Ollie Watkins", num: 19, img: "ollie_watkins.jpg" } },
+            { arg: { name: "Nicolás Otamendi", num: 19, img: "nicolas_otamendi.jpg" }, eng: { name: "Noni Madueke", num: 20, img: "noni_madueke.jpg" } },
+            { arg: { name: "Facundo Medina", num: 25, img: "facundo_medina.jpg" }, eng: { name: "Ivan Toney", num: 22, img: "ivan_toney.jpg" } },
+            { arg: { name: "Nahuel Molina", num: 26, img: "nahuel_molina.jpg" }, eng: { name: "Jude Bellingham", num: 10, img: "jude_bellingham.jpg" } },
+            { arg: { name: "Enzo Fernández", num: 24, img: "enzo_fernandez.jpg" }, eng: { name: "Eberechi Eze", num: 21, img: "eberechi_eze.jpg" } },
+            { arg: { name: "Leandro Paredes", num: 5, img: "leandro_paredes.jpg" }, eng: { name: "Morgan Rogers", num: 17, img: "morgon_rogers.jpg" } },
+            { arg: { name: "Valentin Barco", num: 8, img: "valentina_barco.jpg" }, eng: { name: "Elliot Anderson", num: 8, img: "elliot_anderson.jpg" } }
+        ];
+
+        const grid = document.getElementById('ticketsGrid');
+
+        // Generate the HTML for all 23 tickets dynamically
+        matchData.forEach((match, index) => {
+            const ticketHTML = `
+                <div class="ticket" id="ticket-${index}">
+                    <div class="ticket-header">TICKET #${(index + 1).toString().padStart(2, '0')}</div>
+                    
+                    <div class="lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <div class="lock-text">LOCKED</div>
+                    </div>
+
+                    <div class="ticket-body">
+                        <!-- Argentina Player -->
+                        <div class="player-card">
+                            <div class="country-label arg-label">ARGENTINA</div>
+                            <!-- Pointing to the exact folder and filename -->
+                            <img src="Argentina/${match.arg.img}" alt="${match.arg.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/80/1a233a/ffffff?text=ARG'">
+                            <div class="player-name">${match.arg.name}</div>
+                            <div class="player-number">#${match.arg.num}</div>
+                        </div>
+
+                        <!-- VS Badge -->
+                        <div class="vs-badge">VS</div>
+
+                        <!-- England Player -->
+                        <div class="player-card">
+                            <div class="country-label eng-label">ENGLAND</div>
+                            <!-- Pointing to the exact folder and filename -->
+                            <img src="England/${match.eng.img}" alt="${match.eng.name}" class="player-photo" onerror="this.src='https://via.placeholder.com/80/1a233a/ffffff?text=ENG'">
+                            <div class="player-name">${match.eng.name}</div>
+                            <div class="player-number">#${match.eng.num}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.innerHTML += ticketHTML;
+        });
+
+        // The "HAND OF GOD" unlock logic
+        const inputField = document.getElementById('masterCode');
+        
+        inputField.addEventListener('input', function() {
+            if (this.value.toUpperCase().trim() === 'HAND OF GOD') {
+                // Change input style to show success
+                this.style.borderColor = '#4CAF50';
+                this.style.color = '#4CAF50';
+                this.disabled = true; // prevent more typing
+
+                // Dilute (fade out) the tickets one by one with a delay
+                const tickets = document.querySelectorAll('.ticket');
+                tickets.forEach((ticket, index) => {
+                    setTimeout(() => {
+                        ticket.classList.add('unlocked');
+                    }, index * 300); // 300ms gap between each ticket revealing
+                });
+            }
+        });
+    </script>
+</body>
+</html>
